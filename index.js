@@ -34,7 +34,6 @@ io.on('connection', (socket) => {
 		'sendLetter',
 		({sender, receiver, text, subject, conversationId}) => {
 			const user = getUser(receiver);
-
 			if (user) {
 				io.to(user.socketId).emit('getLetter', {
 					sender,
